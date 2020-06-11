@@ -66,7 +66,6 @@ namespace Formula1_WebApplication
 
             app.UseRouting();
 
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
