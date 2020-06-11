@@ -22,9 +22,7 @@ namespace Formula1_WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FormulaOneDbContext>(options =>
-                options.UseInMemoryDatabase(Configuration.GetConnectionString("DefaultConnection")));
-                //options.UseSqlite("Data source =  teams.db"));
-                //options.UseSqlite(new SqliteConnection("DataSource=:memory:")));
+            options.UseInMemoryDatabase("FormulaOneDatabase"));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<FormulaOneDbContext>()
