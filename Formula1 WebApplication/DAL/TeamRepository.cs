@@ -7,8 +7,8 @@ namespace Formula1_WebApplication.DAL
     public class TeamRepository : ITeamRepository
     {
 
-        private readonly FormulaOneContext db;
-        public TeamRepository(FormulaOneContext DbContext)
+        private readonly FormulaOneDbContext db;
+        public TeamRepository(FormulaOneDbContext DbContext)
         {
             db = DbContext;
         }

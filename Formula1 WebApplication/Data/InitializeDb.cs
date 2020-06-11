@@ -5,7 +5,7 @@ namespace Formula1_WebApplication.Data
 {
     public class InitializeDb
     {
-        public static void Initialize(FormulaOneContext context)
+        public static void Initialize(FormulaOneDbContext context)
         {
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();

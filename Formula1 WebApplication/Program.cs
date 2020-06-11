@@ -19,7 +19,7 @@ namespace Formula1_WebApplication
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<FormulaOneContext>();                    
+                    var context = services.GetRequiredService<FormulaOneDbContext>();                    
                     await context.Database.EnsureCreatedAsync();
                     InitializeDb.Initialize(context);
 

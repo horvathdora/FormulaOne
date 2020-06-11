@@ -21,13 +21,13 @@ namespace Formula1_WebApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<FormulaOneContext>(options =>
+            services.AddDbContext<FormulaOneDbContext>(options =>
                 options.UseInMemoryDatabase(Configuration.GetConnectionString("DefaultConnection")));
                 //options.UseSqlite("Data source =  teams.db"));
                 //options.UseSqlite(new SqliteConnection("DataSource=:memory:")));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<FormulaOneContext>()
+                .AddEntityFrameworkStores<FormulaOneDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddScoped<ITeamRepository, TeamRepository>();

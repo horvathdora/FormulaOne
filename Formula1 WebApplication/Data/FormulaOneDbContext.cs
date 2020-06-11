@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Formula1_WebApplication
 {
-    public class FormulaOneContext : IdentityDbContext<IdentityUser>
+    public class FormulaOneDbContext : IdentityDbContext<IdentityUser>
     {
-        public FormulaOneContext (DbContextOptions<FormulaOneContext> options) : base(options)
+        public FormulaOneDbContext (DbContextOptions<FormulaOneDbContext> options) : base(options)
         {
 
         }
