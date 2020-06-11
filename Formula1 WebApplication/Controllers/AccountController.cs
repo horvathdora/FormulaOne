@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -10,13 +9,11 @@ namespace Formula1_WebApplication.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
 
-        public AccountController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController( UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
-            _logger = logger;
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
@@ -54,20 +51,6 @@ namespace Formula1_WebApplication.Controllers
                 return View();
             }
         }
-        /*
-        var user = await userManager.FindByNameAsync(model.Name);
-            if(user != null)
-            {
-                var Signin = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
-                if (Signin.Succeeded)
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-            return View();
-        }
-        */
-
 
         [HttpPost]
         public async Task<IActionResult> Logout()
