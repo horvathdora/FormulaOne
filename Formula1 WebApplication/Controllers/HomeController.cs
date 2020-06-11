@@ -6,11 +6,8 @@ namespace Formula1_WebApplication.Controllers
 {
     public class HomeController : Controller
     {
-
         public HomeController() { }
 
-        
-       
         public IActionResult Index()
         {
             return View();

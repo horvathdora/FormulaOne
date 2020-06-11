@@ -13,7 +13,6 @@ namespace Formula1_WebApplication.Data
             //already initialized
             if (!context.Teams.Any())
             {
-
                 var teams = new Team[]
                 {
                     new Team{ Name = "Scuderia Ferrari", YearOfFoundation = 1929, AttainedWorldChampionships = 15, PaidEntryFee = true},
@@ -28,21 +27,6 @@ namespace Formula1_WebApplication.Data
                 }
                 context.SaveChanges();
             }
-
-            /*
-            if (!context.Users.Any())
-            {
-                var users = new ApplicationUser[]
-                {
-                    new ApplicationUser{Name = "admin", Password="f1test2018"}
-                };
-                foreach (ApplicationUser u in users)
-                {
-                    context.Users.Add(u);
-                }
-                context.SaveChanges();
-            }
-            */
 
         }
     }
